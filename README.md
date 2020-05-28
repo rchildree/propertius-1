@@ -5,4 +5,5 @@ A student reader's edition.
 Available here: [rchildree.github.io/propertius-1](http://rchildree.github.io/propertius-1)
 
 *To-dos*:
-- glosses
+- dictionary entry
+- gloss
