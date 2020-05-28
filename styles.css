@@ -52,13 +52,9 @@
 /* 	#201547, #582c83 */
 
 * {
-	font-family: 'Source Serif Pro', serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+	font-family: 'Source Serif Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
 	padding: 0;
 	margin: 0;
-/*
-	font-size: calc([minimum size px] + ([maximum size (nopx)] - [minimum size (nopx)]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
-	font-size: calc(10px + (19 - 10) * ((100vw - 320px) / (900 - 320)));
-*/
 	font-size: clamp(16px, 1.6vw, 5vw);
 }
 
@@ -72,7 +68,6 @@ body {
 }
 
 p {
-	/* line-height: calc(30px + (40 - 30) * ((100vw - 750px) / (1600 - 750))); */
 	line-height: 1.4rem;
 	position: relative;
 }
@@ -93,12 +88,12 @@ p span {cursor: pointer;}
 	font-feature-settings: "c2sc", "smcp";
 }
 
-#container span:hover{
-	/* text-underline-offset: 3pt;
+[data-cite]:hover{
+	/* text-underline-offset: 1pt;
 	text-decoration-color: #213450;
 	text-decoration-thickness: 3px;
-	text-decoration-skip-ink: auto; */
-	/* border-bottom: 3px dotted #CA1E47; */
+	text-decoration-skip-ink: auto;
+	border-bottom: 3px dotted #CA1E47; */
 	color: #CA1E47;
 }
 
@@ -221,6 +216,17 @@ p:hover::before {
 	opacity:1;
 	font-weight:bold;
 	color: #CA1E47;
+}
+
+.textnote::after {
+	position: absolute;
+	display: block;
+	left: 27rem;
+	text-indent:0;
+	font-size: .75rem;
+	bottom: -1px;
+	color: #000000;
+	content: "†";
 }
 
 section+section {
