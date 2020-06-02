@@ -140,7 +140,7 @@ body .same-width {
 	background-color: #e3f9ff;
 	/* box-shadow: -2px 2px 2px 0px #133441; */
 	border-bottom: 1px solid #041344;
-	/* border-top: 1px solid #041344; */
+	border-top: 3px solid #099cec;
 	position: -webkit-sticky;
 	position: sticky;
 	overflow: hidden;
