@@ -24,9 +24,9 @@
 	src: url(fonts/sspbi.woff2) format('woff2');
   }
 
-@media only screen and (max-width: 599px) { 
-	footer p, p::before {display: none;}
-	/* #title, #centerer, #container {width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0;} */
+@media only screen and (max-width: 375px) { 
+	footer p, p::before, .textnote::after {display: none;}
+	body, #title, #centerer, #container {margin-left:0;margin-right:0;padding-left:0;padding-right:0;overflow-x: hidden;}
 } 
 
 @media only screen and (max-width: 799px) { 
@@ -188,7 +188,7 @@ body .same-width {
 
 #container {
 	margin: 60px auto 150px;
-	width: 30rem;
+	width: clamp(375px, 30rem, 100vw);
 }
 
 section {
