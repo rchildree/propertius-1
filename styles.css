@@ -53,8 +53,8 @@ body {
 	position: fixed;
 	top: 0;
 	right: 0;
-	border: 3px solid #099cec;
-	border-width: 0 0 3px 3px;
+	border: 1px solid #041344;
+	border-width: 0 0 1px 1px;
 	height: 100vh;
 	z-index: 251;
 	transform: translateX(100%);
@@ -72,10 +72,11 @@ body {
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 0 1rem 5rem .5rem;
+	text-align: center;
+	padding: 0 .5rem 5rem;
 }
 
-.nav__item {margin-right: .5rem;}
+.nav__item {margin: 0 .25rem;}
 .nav__link {text-decoration: none;}
 .nav__link:hover {font-weight: bold;}
 
@@ -84,21 +85,24 @@ body {
 	left: 0;
 	transform: translateX(-100%);
 	border: 0;
-	background-color: #ffffff;
+	background-color: unset;
 }
   
 .hamburger {
 	display: block;
 	position: relative;
+	top:.5rem;
 	color: #041344;
 	font-size: 1.5rem;
 	width: 1.5rem;
 	background: #ffffff;
-	border: 3px solid #099cec;
-	border-width: 0 0 3px 3px;
+	border: 1px solid #041344;
+	border-right: 0;
 	line-height: 1rem;
-	padding:5px 0 10px;
+	padding:5px 0 11px;
 	cursor: pointer;
+	border-bottom-left-radius: 20%;
+	border-top-left-radius: 20%;
 }
 
 .nav-open .nav {
