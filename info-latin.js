@@ -132,7 +132,6 @@ function doPOS(tag) {
 
 
 const doInfo = function(event) {
-	if (event.type == 'touchstart') {event.preventDefault()};
 	if (event.target.tagName === "SPAN") {
 		let mousedWord = event.target;
 		console.log(mousedWord.dataset.cite);
