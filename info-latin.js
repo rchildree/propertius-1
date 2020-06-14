@@ -161,5 +161,4 @@ const doLink = function(event) {
 
 const bubbleTop = document.querySelector("#container");
 	bubbleTop.addEventListener('mouseover', doInfo, false);
-	bubbleTop.addEventListener('touchstart', doInfo, false);
-	bubbleTop.addEventListener('click', doLink, false);
+	window.matchMedia('(hover: hover)').matches ? bubbleTop.addEventListener('touchstart', doInfo, false) : bubbleTop.addEventListener('click', doLink, false);
