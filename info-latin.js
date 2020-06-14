@@ -151,7 +151,8 @@ const doInfo = function(event) {
 };
 	
 const doLink = function(event) {
-	if (event.target.tagName === "SPAN") {
+	if (event.type == 'touchstart') {break};
+	else if (event.target.tagName === "SPAN") {
 		let clickedWord = event.target;
 		let wordLookup = (clickedWord.dataset.perslemma) ? clickedWord.dataset.perslemma : " ";
 		let url = 'http://alatius.com/ls/index.php?met=up&ord=' + wordLookup;
