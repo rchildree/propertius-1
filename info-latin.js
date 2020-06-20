@@ -142,7 +142,7 @@ const doInfo = function(event) {
 		let wordDef = (mousedWord.dataset.shortdef) ? mousedWord.dataset.shortdef : " ";
 		let infoBox = 
 			`
-				<li style="text-indent:-4rem;"><span id="citation">${wordCite}</span><span class="entry">${wordForm}</span> &nbsp; <span style="font-feature-settings: 'c2sc', 'smcp';">${wordPos}</span></li>
+				<li style="text-indent:-2.75rem"><span id="citation">${wordCite}</span><span class="entry">${wordForm}</span> &nbsp; <span style="font-feature-settings: 'c2sc', 'smcp';">${wordPos}</span></li>
 				<li>${wordDict}</li>
 				<li><em>${wordDef}</em></li>
 			`;
