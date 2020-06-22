@@ -27,13 +27,13 @@
 
 @media only screen and (max-width: 475px) { 
 	footer p, p::before, .textnote::before, nav {display: none;}
-	body, #title, #centerer, #container {margin-left:0;margin-right:0;padding-left:0;padding-right:0;overflow-x: hidden;}
+	body, #title, #centerer, main {margin-left:0;margin-right:0;padding-left:0;padding-right:0;overflow-x: hidden;}
 	#citation {opacity: 0;}
 	footer {background-position: center center !important;}
 } 
 
 @media only screen and (max-width: 799px) { 
-	header {background-image: none !important;}	/* #title, #centerer, #container {width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0;} */
+	header {background-image: none !important;}	/* #title, #centerer, main {width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0;} */
 } 
 
 /*  Housekeeping */
@@ -220,7 +220,7 @@ b {
 
 /*  Main text area  */
 
-#container {
+main {
 	grid-area: Text;
 	margin: 60px auto 150px;
 	width: clamp(375px, 30rem, 100vw);
