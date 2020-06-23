@@ -1,6 +1,7 @@
 const navToggle = document.querySelector('.nav__toggle');
 navToggle.addEventListener('click', () => {
-	  document.body.classList.toggle('nav-open');
+	  document.querySelector('.nav').classList.toggle('nav-open');
+	  document.querySelector('.fa-angle-double-left').classList.toggle('hamburger-open');
 }
 );
 
