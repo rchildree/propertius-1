@@ -25,8 +25,8 @@
 
 /*   Responsivity  */
 
-@media only screen and (max-width: 475px) { 
-	footer p, p::before, .textnote::before, nav {display: none;}
+@media only screen and (max-width: 600px) { 
+	footer p, p::before, .textnote::before {display: none;}
 	body, #title, #centerer, main {margin-left:0;margin-right:0;padding-left:0;padding-right:0;overflow-x: hidden;}
 	#citation {opacity: 0;}
 	footer {background-position: center center !important;}
@@ -112,15 +112,10 @@ body {
 	cursor: pointer;
 }
 
-.fa-angle-double-left {
-	/* margin:10px; */
-	width: 15px;
-}
-
 .nav__toggle span {
 	display: block;
-	font-size: .65rem;
-	padding:15px;
+	font-size: .5rem;
+	padding:0 10px;
 }
 
 .nav:hover {
