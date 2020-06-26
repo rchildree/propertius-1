@@ -251,7 +251,40 @@ section+section {
 	margin-top:1.5rem;
 }
 
-/* ---------------------------- FOOTER -------------------------------------------------------- */
-footer {
-	border:1px solid palevioletred;
+/* ---------------------------- RESPONSIVE ---------------------------------------------------- */
+
+@media screen and (max-width:800px){
+
+	body {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 0;
+		grid-template-areas: "header" "nav" "aside" "main";
+	}
+	  
+	header { grid-area: header;
+		position: relative;
+		width: 100%;
+		height: auto;
+	}
+	header img {display:none}
+	hgroup h1, hgroup h2 {display: inline-block;}
+	  
+	nav { grid-area: nav; }
+
+	.nav__list {display: grid;}
+	  
+	aside {
+		grid-area: aside;
+		left:0; top: 0px;
+		position: sticky;
+		width:100%;
+	}
+	  
+	main {
+		grid-area: main;
+		margin: 0 auto;
+	}
+
 }
