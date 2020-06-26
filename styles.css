@@ -271,8 +271,11 @@ section+section {
 	header img {display:none}
 	hgroup h1, hgroup h2 {display: inline-block;}
 	  
-	nav { grid-area: nav; }
-
+	nav {
+		grid-area: nav;
+		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 30px;
+	}
+	nav ul a {font-size: 14px;}
 	.nav__list {display: grid;}
 	  
 	aside {
@@ -286,5 +289,64 @@ section+section {
 		grid-area: main;
 		margin: 0 auto;
 	}
+
+}
+
+/* ---------------------------- ITTY-BITTY ---------------------------------------------------- */
+
+@media screen and (max-width:375px){
+
+	body {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 0;
+		grid-template-areas: "header" "nav" "aside" "main";
+		overflow-x: hidden;
+	}
+	  
+	header { grid-area: header;
+		position: relative;
+		width: 100%;
+		max-width: 100vw;
+		height: auto;;
+	}
+	header img {display:none}
+	hgroup h1, hgroup h2 {display: inline-block;}
+	  
+	nav {
+		grid-area: nav;
+		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 30px;
+	}
+	.nav__list {display: grid;}
+	nav ul a {font-size: 14px;}
+	  
+	aside {
+		grid-area: aside;
+		left:0; top: 0px;
+		position: sticky;
+		width:100%;
+		max-width: 100vw;
+	}
+	  
+	section{padding-right: 5px;}
+
+	main {
+		grid-area: main;
+		margin: 0 auto;
+		max-width: 100vw;
+	}
+
+	main p {
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	[data-ln]:nth-child(odd){
+		text-indent:1rem;
+	}
+
+	p:hover::before, .textnote::before {display:none;}
+	#citation {display:block;text-align: left;text-indent: 0;}
 
 }
