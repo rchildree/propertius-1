@@ -62,7 +62,7 @@ header {
 	background: repeating-linear-gradient(-45deg, #099cec, #099cec 8px, #0997e4 8px, #0997e4 16px);
 	padding: 20px;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 	transition: all 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
 	animation: Gradient 60s infinite linear;
 	background-size: 1250px 1250px;
