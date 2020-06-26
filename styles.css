@@ -1,167 +1,144 @@
+/* ---------------------------- FONT IMPORTS -------------------------------------------------- */
 @font-face {
 	font-family: 'Source Serif Pro';
 	font-style: normal;
 	font-weight: 400;
 	src: url(fonts/ssp.woff2) format('woff2');
-  }
-  @font-face {
+}
+@font-face {
 	font-family: 'Source Serif Pro';
 	font-style: italic;
 	font-weight: 400;
 	src: url(fonts/sspi.woff2) format('woff2');
-  }
-  @font-face {
+}
+@font-face {
 	font-family: 'Source Serif Pro';
 	font-style: normal;
 	font-weight: 800;
 	src: url(fonts/sspb.woff2) format('woff2');
-  }
-  @font-face {
+}
+@font-face {
 	font-family: 'Source Serif Pro';
 	font-style: italic;
 	font-weight: 800;
 	src: url(fonts/sspbi.woff2) format('woff2');
-  }
+}
 
-/*   Responsivity  */
-
-@media only screen and (max-width: 600px) { 
-	footer p, p::before, .textnote::before {display: none;}
-	body, #title, #centerer, main {margin-left:0;margin-right:0;padding-left:0;padding-right:0;overflow-x: hidden;}
-	#citation {opacity: 0;}
-	footer {background-position: center center !important;}
-} 
-
-@media only screen and (max-width: 799px) { 
-	header {background-image: none !important;}	/* #title, #centerer, main {width:100%;margin-left:0;margin-right:0;padding-left:0;padding-right:0;} */
-} 
-
-/*  Housekeeping */
-
+/* ---------------------------- HOUSEKEEPING -------------------------------------------------- */
 * {
-	font-family: 'Source Serif Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Source Serif Pro';
 	font-size: clamp(16px, 1.35vw, 30px);
 }
 
-html {scroll-padding-top: 6rem; /* height of sticky infobox */}
+html{scroll-padding-top: 160px;}
+
+/* :root{} */
 
 body {
 	background-color: #f1f0f0;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	gap: 0;
-	grid-template-areas: "Header" "Infobox" "Text" "Footer";
-	justify-items: center;
-	align-items: stretch;
-}
-
-/* Nav section */
-.nav {
-	background: #ffffff;
-	position: fixed;
-	top: 0;
-	right: 0;
-	border: 1px solid #041344;
-	border-width: 0 0 1px 1px;
-	/* height: 100vh; */
-	z-index: 251;
-	transform: translateX(100%);
-	transition: transform 600ms cubic-bezier(.5, 0, .5, 1)
-}
-
-.nav__list {
-	list-style: none;
 	margin: 0;
-	padding: 8px .5rem .5rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(1.25rem, 1fr));
-	grid-gap: 0;
-	/* justify-content: space-between; */
-	/* height: 100vh; */
-	width: 10vw;
-	text-align: center;
+	grid-template-columns: 210px 1fr;
+	grid-template-rows: 1fr;
+	gap: 2rem 0;
+	grid-template-areas: "Sidebar Main";
+	/* display: flex;
+	flex-direction: column; */
+	/* overflow-x: hidden; */
 }
 
-.nav__item {
-	line-height: .75rem;
-	text-align: center;
-	margin-bottom: 3px;
-}
-.nav__link {text-decoration: none;font-size: .65rem;}
-.nav__link:hover {font-weight: bold;}
-
-.nav__toggle {
-	position: absolute;
-	left: 0;
-	top: 0;
-	transform: translateX(-100%);
-	border: 0;
-	border: 1px solid #041344;
-	border-width: 0 0 1px 1px;
-	background-color: #ffffff;
+/* ---------------------------- HEADER -------------------------------------------------------- */
+header {
+	grid-area: Sidebar;
+	position: sticky;
+	top:0;
+	width:210px; height: 100vh;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
+	background-color: #099cec;
+	background: repeating-linear-gradient(-45deg, #099cec, #099cec 8px, #0997e4 8px, #0997e4 16px);
+	padding: 20px;
+	justify-content: space-between;
+	align-items: flex-start;
+	transition: all 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
+	animation: Gradient 60s infinite linear;
+	background-size: 1250px 1250px;
 }
 
-.nav__toggle>span {
-	display: block;
-	font-size: 15px;
-	padding: .25rem .5rem;
+@keyframes Gradient{
+	0% {background-position-x:0%}
+	100% {background-position-x:100%}
 }
 
-.nav:hover {
-	transform: translateX(0);
+header img {
+	height: 50px;
 }
 
-/* End nav */
-	
-header {
-	grid-area: Header;
-	width: 100%;
-	font-weight: normal;
-	font-size: 1.1rem;
-	line-height: 1rem;
-	padding: 30px 0 25px;
-	background-color:#099cec;
-	color: #ffffff;
-	background-image: url("fu-cl-ed.svg");
-	background-repeat: no-repeat;
-	background-position: 2% 50%;
-	background-size: 158px auto;
+hgroup {padding-left: 15px;}
+
+hgroup h1, hgroup h2, hgroup h2 i, nav label {
+	color: #fff;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	font-feature-settings: "onum", "pnum";
 }
 
-header>h1 {
-	width: 30rem;
-	margin:0 auto;
-	padding-left: 25px;
-	font-variant-numeric: oldstyle-nums proportional-nums;
-	font-feature-settings: 'onum', 'pnum';
-	font-weight: normal;
-	/* font-size: 150%; */
-}
+hgroup h1 {font-feature-settings: "c2sc", "smcp";}
 
-#centerer {
-	grid-area: Infobox;
+/* ---------------------------- NAV ----------------------------------------------------------- */
+nav {
+	/* position:fixed; bottom: 5.3rem; */
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
-	top:0;
-	left:0;
-	align-items: center;
+	max-height: 50%;
+	/* z-index: 1; */
+	/* background-color: #ffffff; */
+	/* padding:20px; */
+	/* border-top: 1px solid #041344; */
+}
+
+nav input {display: none;}
+nav input:checked ~ .nav__list {display:grid;}
+nav label {color: #ffffff;cursor: pointer;}
+
+.nav__list {
+	display: none;
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, 1.25rem);
+	justify-items: center;
+	justify-content: space-between;
+	list-style-type: none;
+	background-color: #ffffff;
+	border: 1px solid #041344;
+	margin-top: 20px;
+	padding: 10px;
+	/* transition: background-color 5s ease-in; */
+}
+
+nav ul a{
+	display: block;
+	text-decoration: none;
+	color: #000000;
+	font-size: .5rem;
+	padding: .5rem;
+}
+
+nav ul a:hover {
+	font-weight: 800;
+	color:#CA1E47
+}
+/* ---------------------------- ASIDE --------------------------------------------------------- */
+aside {
+	position: fixed; top: 0; left: 210px; width: calc(100% - 210px);
 	background-color: #e3f9ff;
 	border-bottom: 1px solid #041344;
 	border-top: 3px solid #099cec;
-	position: -webkit-sticky;
-	position: sticky;
-	overflow: hidden;
-	/* height: 3rem; */
-	z-index: 250;
+	z-index: 2;
 }
 
 #info{
@@ -214,17 +191,16 @@ b {
 	font-size: .75rem;
 }
 
-/*  Main text area  */
-
+/* ---------------------------- MAIN ---------------------------------------------------------- */
 main {
-	grid-area: Text;
-	margin: 60px auto 150px;
+	grid-area: Main;
+	margin: 160px auto 50px;
 	width: clamp(375px, 30rem, 100vw);
+	max-width: 100%;
 }
 
 section {
 	padding: 25px 25px;
-	/* margin-left: 3rem; */
 	background-color: #ffffff;
 	border-radius: 3px;
 }
@@ -275,31 +251,7 @@ section+section {
 	margin-top:1.5rem;
 }
 
-/*   Footer area   */
-
+/* ---------------------------- FOOTER -------------------------------------------------------- */
 footer {
-	grid-area: Footer;
-	box-sizing: content-box;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	width:100%;
-	max-width: 100vw;
-	left:0;
-	bottom:0;
-	background-color: #099cec;
-	background-image: url("fu-cl-ed.svg");
-	background-repeat: no-repeat;
-	background-position: 2% 50%;
-	background-size: 158px auto;
-	height:75px;
-	color: white;
-}
-footer p {
-	padding: 0 35px;
-}
-footer a {
-	color:white;
-	text-decoration: none;
-	font-size: .5rem;
+	border:1px solid palevioletred;
 }
