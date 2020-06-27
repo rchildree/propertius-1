@@ -59,7 +59,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	background-color: #099cec;
-	background: repeating-linear-gradient(-45deg, #099cec, #099cec 8px, #0997e4 8px, #0997e4 16px);
+	background: repeating-linear-gradient(-32.5deg, #099cec, #099cec 8px, #0997e4 8px, #0997e4 16px);
 	padding: 20px;
 	justify-content: space-between;
 	align-items: center;
