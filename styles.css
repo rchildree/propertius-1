@@ -108,7 +108,7 @@ nav input:checked ~ .nav__list {display:grid;}
 nav input:checked ~ label>#menu {display:none;}
 nav input:checked ~ label>#close {display:block;}
 
-nav label {color: #ffffff;cursor: pointer;user-select: none;width:24px}
+nav label {color: #ffffff;cursor: pointer;user-select: none;height:24px;width:24px}
 nav label>svg {width: 24px;fill:#ffffff;}
 nav label>#close{display: none;}
 
