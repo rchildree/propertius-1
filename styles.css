@@ -273,7 +273,7 @@ section+section {
 	  
 	nav {
 		grid-area: nav;
-		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 30px;
+		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 24px;
 	}
 	nav ul a {font-size: 14px;}
 	.nav__list {display: grid;}
@@ -316,7 +316,7 @@ section+section {
 	  
 	nav {
 		grid-area: nav;
-		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 30px;
+		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 24px;
 	}
 	.nav__list {display: grid;}
 	nav ul a {font-size: 14px;}
