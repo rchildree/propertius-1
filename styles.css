@@ -279,10 +279,9 @@ section+section {
 	  
 	nav {
 		grid-area: nav;
-		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 24px;
 	}
 	nav ul a {font-size: 14px;}
-	.nav__list {display: grid;}
+	.nav__list {display: none;}
 	  
 	aside {
 		grid-area: aside;
@@ -315,16 +314,15 @@ section+section {
 		position: relative;
 		width: 100%;
 		max-width: 100vw;
-		height: auto;;
+		height: auto;
 	}
 	header img {display:none}
 	hgroup h1, hgroup h2 {display: inline-block;}
 	  
 	nav {
 		grid-area: nav;
-		background: url("images/fu-cl-ed-little.svg") no-repeat right top/auto 24px;
 	}
-	.nav__list {display: grid;}
+	.nav__list {display: none;}
 	nav ul a {font-size: 14px;}
 	  
 	aside {
