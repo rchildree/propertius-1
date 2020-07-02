@@ -316,7 +316,7 @@ section+section {
 		grid-template-rows: auto;
 		gap: 0;
 		grid-template-areas: "header" "nav" "aside" "main";
-		overflow-x: hidden;
+		/* overflow-x: hidden; */
 	}
 	  
 	header { grid-area: header;
