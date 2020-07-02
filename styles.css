@@ -52,9 +52,6 @@ body {
 	grid-template-rows: 1fr;
 	gap: 2rem 0;
 	grid-template-areas: "Sidebar Main";
-	/* display: flex;
-	flex-direction: column; */
-	/* overflow-x: hidden; */
 }
 
 /* ---------------------------- HEADER -------------------------------------------------------- */
@@ -316,7 +313,6 @@ section+section {
 		grid-template-rows: auto;
 		gap: 0;
 		grid-template-areas: "header" "nav" "aside" "main";
-		/* overflow-x: hidden; */
 	}
 	  
 	header { grid-area: header;
