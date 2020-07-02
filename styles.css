@@ -309,6 +309,7 @@ section+section {
 
 @media screen and (max-width:375px){
 
+	html {overflow-x: hidden}
 	body {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -349,8 +350,8 @@ section+section {
 		max-width: 100vw;
 	}
 
-	main p {
-		font-size: 12px;
+	main p, main span {
+		font-size: 14px;
 		line-height: 20px;
 	}
 
