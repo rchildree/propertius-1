@@ -59,7 +59,7 @@ const tagCatalog = [
 			{"value": "m", "expanded": "imperat."}, 
 			{"value": "d", "expanded": "gerund"}, 
 			{"value": "g", "expanded": "gerundive"}, 
-			{"value": "@", "expanded": "supine"}, 
+			{"value": "u", "expanded": "supine"}, 
 			{"value": "p", "expanded": "ppl."}
 		]
 	},
@@ -116,17 +116,17 @@ function doPOS(tag) {
 			}
 	}};
 	if (tag[0] === "n" || tag[0] === "a" || tag[0] === "p" || tag[0] === "m") {
-		answer = (wordPos[7] + " " + wordPos[2] + " " + wordPos[6] + " " + wordPos[8]);
+		answer = `${wordPos[7]} ${wordPos[2]} ${wordPos[6]} ${wordPos[8]}`;
 	} else if (tag[4] === "p") { // participle: 
-		answer = (wordPos[3] + " " + wordPos[5] + " " + wordPos[4] + ", " + wordPos[7] + " " + wordPos[2] + " " + wordPos[6]);
+		answer = `${wordPos[3]} ${wordPos[5]} ${wordPos[4]}, ${wordPos[7]} ${wordPos[2]} ${wordPos[6]}`;
 	} else if (tag[4] === "n") { // infinitive: 
-		answer = (wordPos[3] + " " + wordPos[5] + " " + wordPos[4]);
-	} else if (tag[4] === "g" || tag[4] === "d") { // gerund / gerundive: 
-		answer = (wordPos[4] + ", " + wordPos[7] + " " + wordPos[2] + " " + wordPos[6]);
+		answer = `${wordPos[3]} ${wordPos[5]} ${wordPos[4]}`;
+	} else if (tag[4] === "g" || tag[4] === "d" || tag[4] === "u") { // gerund / gerundive / supine: 
+		answer = `${wordPos[4] + ", " + wordPos[7]} ${wordPos[2]} ${wordPos[6]}`;
 	} else if (tag[0] === "v") { // verbs: 12 3 5 4
-		answer = (wordPos[1] + wordPos[2] + " " + wordPos[3] + " " + wordPos[5] + " " + wordPos[4]);
+		answer = `${wordPos[1]} ${wordPos[2]} ${wordPos[3]} ${wordPos[5]} ${wordPos[4]}`;
 	} else if (tag[0]) { // the rest
-		answer = wordPos[0];
+		answer = `${wordPos[0]}`;
 	};
 	return answer;
 };
@@ -138,13 +138,16 @@ const doInfo = function(event) {
 		console.log(mousedWord.dataset.cite);
 		let wordCite = (mousedWord.dataset.cite); // addition for citation's sake
 		let wordForm = (mousedWord.textContent) ? mousedWord.textContent : `&nbsp;`;
-		let wordDict = (mousedWord.dataset.lemma) ? mousedWord.dataset.lemma : " ";
+		let wordDict = (mousedWord.dataset.dict) ? mousedWord.dataset.dict : " ";
 		var wordPos = (mousedWord.dataset.pos) ? doPOS(mousedWord.dataset.pos) : " ";
-		let wordDef = (mousedWord.dataset.shortdef) ? mousedWord.dataset.shortdef : " ";
+		let wordDef = (mousedWord.dataset.def) ? mousedWord.dataset.def : " ";
 		let infoBox = 
 			`
-				<li style="text-indent:-2.75rem"><span id="citation">${wordCite}</span><span class="entry">${wordForm}</span> &nbsp; <span style="font-feature-settings: 'c2sc', 'smcp';">${wordPos}</span></li>
-				<li>${wordDict}</li>
+				<li id="firstline">
+					<span id="citation">${wordCite}</span><span id="entry">${wordForm}</span>
+				</li>
+				<li id="pos">${wordPos}</li>
+				<li style="margin-top:5px">${wordDict}</li>
 				<li><em>${wordDef}</em></li>
 			`;
 		document.querySelector("#info").innerHTML = infoBox;
@@ -154,7 +157,7 @@ const doInfo = function(event) {
 const doLink = function(event) {
 	if (event.target.tagName === "SPAN") {
 		let clickedWord = event.target;
-		let wordLookup = (clickedWord.dataset.perslemma) ? clickedWord.dataset.perslemma : " ";
+		let wordLookup = (clickedWord.dataset.lookup) ? clickedWord.dataset.lookup : " ";
 		let url = 'http://alatius.com/ls/index.php?met=up&ord=' + wordLookup;
 		window.open(url, '_dict');
 	}
