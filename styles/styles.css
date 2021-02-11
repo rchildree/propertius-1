@@ -152,10 +152,9 @@ aside {
 	padding-bottom:30px;
 	position: relative;
 	list-style-type: none;
-	/* border-bottom: 1.5px solid #0000000e; */
-	/* box-shadow: 0px 20px 20px -20px #00000019; */
-
 }
+
+aside.poetry #info {width: 50ch}
 
 #message{
 	opacity:.2;
@@ -296,7 +295,7 @@ section+section {
 main.elegiac [data-ln]:nth-child(odd){
 	text-indent:1.5rem;
 }
-
+main.poetry section {width: calc(50ch + 70px)}
 main.poetry p+p {margin-top:0;}
 
 .peo+.peo{
